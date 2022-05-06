@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Jof</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'det/css/bootstrap.min.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'det/css/style.css' %}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{% static 'det/css/responsive.css' %}">
+    <!-- fevicon -->
+    <link rel="icon" href="{% static 'det/images/fevicon.png' %}" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'det/css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+
+<body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="{% static 'det/images/loading.gif' %}" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+
+
+
+
+
+
+    <!-- section -->
+    <div id="fruits" class="section dark_bg" style="background-color:white;">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                         <div class="row">
+                             <img class="img-responsive" src="{{pr.img.url}}" alt="#" style="height: 700px;"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                           
+                    <div class="full text_align_center">
+                        <h3 class="font" style="font-size: xx-large;color:red;">{{pr.name}}<br><br><strong class="font">{{pr.desc}}</strong>
+                        <br><br><strong class="font">Price:{{pr.price}}</strong>
+                        <br><br><strong class="font">Stock left:{{pr.stk}}</strong>
+                        <br><br><strong class="font">Is available:{{pr.avbl}}</strong>
+                        <br><br><a href="{% url 'addcart' pr.id %}" ><button type="submit" class="btn btn-success" >Add to cart</button></a>
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+
+
+
+
+    <!-- Javascript files-->
+    <script src="{% static 'det/js/jquery.min.js' %}"></script>
+    <script src="{% static 'det/js/popper.min.js' %}"></script>
+    <script src="{% static 'det/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'det/js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'det/js/plugin.js' %}"></script>
+
+    <!-- sidebar -->
+    <script src="{% static 'det/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'det/js/custom.js' %}"></script>
+</body>
+
+</html>
+
+{% endblock %}
